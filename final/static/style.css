@@ -1,0 +1,55 @@
+.upload-box{
+    border: 30px solid orange;
+  padding: 20px;
+  background-color: greenyellow;
+  height: 100px;
+  width: 90%;
+}
+.result-box{
+    border: 30px solid greenyellow;
+  padding: 20px;
+  background-color: pink;
+  height: 100px;
+  width: 90%;
+  height:190%;
+}
+.detect:hover {
+    background-color: yellow;
+    color: black;
+}
+img {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    margin: auto;
+    border-color: black;
+    }
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: blueviolet;
+    padding-top: 15px;
+    font-family: "Helvetica"
+    }
+h3 {
+        color: blueviolet;
+        font-weight: bold;
+}
+
+body{
+    background-color: lightgoldenrodyellow;
+    
+}
+input[type="submit"] {
+    color: white;
+    background-color: lightseagreen;
+    font-weight: bold;
+    font-size: 15px;
+    width : 25%;
+    height: 40px;
+    border: solid black;
+    margin-left: 400px;
+}
+

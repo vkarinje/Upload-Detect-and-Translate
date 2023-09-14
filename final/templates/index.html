@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <title>My Final Project</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static',
+    filename='style.css') }}">
+    <link
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  </head>
+  <body>
+    <h1>Upload, Detect and Translate</h1>
+    <div class="upload-box">
+      <form
+        action="/success"
+        class="upload"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <b>Upload any Image of your choice: </b><input type="file" name="file" /><br /><br />
+
+        <input type="submit" name="submit" value="Detect" class="detect"/ >
+      </form>
+    </div>
+    {% for image_entity in image_entities %}
+    <h1>Your Results</h1>
+    <!-- <p>{{image_entity['blob_name']}} was uploaded {{image_entity['timestamp']}}.</p> -->
+    <div class="result-box">
+      <img
+        src="{{image_entity['image_public_url']}}"
+        width="200"
+        height="200"
+        alt="img"
+      /><br />
+      <ul>
+        <h5>What is the image representing:</h5>
+        {{image_entity['object_detected']}}
+      </ul>
+      <ul>
+        <h5>Translation of Label for the image:</h5>
+        {{image_entity['translated_label_detected']}}
+      </ul>
+      <ul>
+        <h5>Surprised face detected if it is a face image:</h5>
+        {{image_entity['expression']}}
+      </ul>
+      <ul>
+        <h5>Detection of Logo:</h5>
+        {{image_entity['logo']}}
+      </ul>
+      <ul>
+        <h5>Other Labels detected:</h5>
+        {{image_entity['label']}}
+      </ul>
+      <ul>
+        <h5>Detection of Place:</h5>
+        {{image_entity['place_detected']}}
+      </ul>
+      <ul>
+        <h5>Detection of Text if present:</h5>
+        {{image_entity['text']}}
+      </ul>
+      <ul>
+        <h5>Text translation after detection:</h5>
+        {{image_entity['translated_text']}}
+      </ul>
+    </div>
+    {% endfor %}
+  </body>
+</html>

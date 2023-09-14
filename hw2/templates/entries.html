@@ -1,0 +1,26 @@
+
+
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Social Services in Portland</h2>
+
+    <h3>Make a new entry<a href="{{ url_for('sign') }}"> here</a></h3>
+    <h4>Your Entries</h4>
+    {% for entry in entries %}
+        <p class=entry>
+            <br>{{ entry.ID }}<br>
+            <br>{{ entry.name }}<br>
+            <br>{{ entry.service}}<br>
+            <br>{{ entry.location}}<br>
+            <br>{{ entry.operating_hours}}<br>
+            <br>{{ entry.phone_number}}<br>
+            <br>{{ entry.review}}<br>
+            <a href="{{url_for('update',ID=entry.ID) }}"> Update</a>
+            <a href="{{url_for('delete',ID=entry.ID) }}"> Delete</a>
+
+	    
+        </p>
+        
+    {% endfor %}
+
+{% endblock %}

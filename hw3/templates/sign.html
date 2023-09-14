@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>New Entry for Social Services</h2>
+    <form action="{{ url_for('sign') }}" method=post>
+    
+	<p class="heading">Name: <input type=text name=name>
+	<p class="heading">Types of service: <input type=text name=service>
+    <p class="heading">Location: <input type=text name=location>
+    <p class="heading">Operating hours: <input type=text name=operating_hours>
+    <p class="heading">Phone number: <input type=tel name=phone_number>
+        <p class="heading">Review:
+	<textarea rows=5 cols=49 name=review></textarea></p>
+	<p><input type=submit value=Submit></p>
+    </form>
+    <h5>View your entry <a href="{{ url_for('entries') }}"> here</a></h5>
+{% endblock %}
